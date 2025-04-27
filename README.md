@@ -8,5 +8,6 @@ pip install -r requirements.txt
 
 # How to run
 ```shell
-python models/hurst_exponent.py
+cd modelling_code
+python Mean_Reversion_Individual_Stock_Pipeline.py
 ```
