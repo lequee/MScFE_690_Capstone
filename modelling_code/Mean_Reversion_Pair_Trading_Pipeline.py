@@ -58,8 +58,8 @@ def run_pair_trading_analysis(prices, max_pairs=50):
                         "Sharpe (Z*ΔSpread)": round(sharpe, 4),
                         "Mean Spread": round(spread.mean(), 4),
                         "Std Spread": round(spread.std(), 4),
-                        "Start": spread.index.min(),
-                        "End": spread.index.max()
+                        # "Start": spread.index.min(),
+                        # "End": spread.index.max()
                     })
                     spreads_dict[ticker_name] = spread
 
@@ -131,7 +131,7 @@ def backtest_pair_strategy(y, x, entry_z=1.5, exit_z=0.5, cost=0.001):
     # Metrics
     sharpe = net_log_return.mean() / (net_log_return.std() + 1e-8) * np.sqrt(252)
     total_log_return = cum_log_return.iloc[-1]
-    annualized_return = total_log_return * (252 / len(total_log_return))
+    annualized_return = total_log_return * (252 / len(net_log_return))
     max_drawdown = (cum_log_return / cum_log_return.cummax() - 1).min()
 
     return {   
@@ -221,7 +221,7 @@ def build_pair_metadata(pair_results_df, metadata_df):
     meta = metadata_df.set_index("Ticker")
 
     records = []
-    for row in pair_results_df:
+    for _, row in pair_results_df.iterrows():
         t1, t2 = row["Stock1"], row["Stock2"]
         ticker_pair = row["Ticker"]
 
@@ -250,18 +250,58 @@ def build_pair_metadata(pair_results_df, metadata_df):
 
 #%% Cointegration analysis
 pair_results_df, pair_spread = run_pair_trading_analysis(prices)
-pair_results_df.to_csv(f"../modelling_result/pair_trading_top_cointegrated_pairs_{start_date[:4]}_{end_date[:4]}.csv", index=False)
-pair_spread.to_csv(f"../modelling_result/pair_trading_spread_series_{start_date[:4]}_{end_date[:4]}.csv", index=False)
+# pair_results_df.to_csv(f"../modelling_result/pair_trading_top_cointegrated_pairs_{start_date[:4]}_{end_date[:4]}.csv", index=False)
+# pair_spread.to_csv(f"../modelling_result/pair_trading_spread_series_{start_date[:4]}_{end_date[:4]}.csv", index=False)
 
 #%% Mean Reversion Analysis
 pair_metadata_df = build_pair_metadata(pair_results_df, metadata_df)
-stat_df = run_mean_reversion_analysis(pair_spread, pair_metadata_df)
+stat_df = run_mean_reversion_analysis(pair_spread, pair_metadata_df, strategy_type="spread")
 
 #%%
-pair_backtest_df = backtest_top_pairs(prices, pair_results_df, top_n=10)
+pair_backtest_df = backtest_top_pairs(prices, pair_results_df, top_n=48)
 pair_backtest_df.to_csv(f"../modelling_result/pair_trading_backtest_results_{start_date[:4]}_{end_date[:4]}.csv", index=False)
 
 # %%
-plot_top_pairs_grid(prices, pair_results_df, top_n=10)
+plot_top_pairs_grid(prices, pair_results_df, top_n=48)
 
+
+#%% Histogram plots
+# Plotting histograms for ADF p-value, Hurst exponent, and Half-life
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = stat_df.copy()
+# Set style
+sns.set(style='whitegrid')
+
+# Set up the figure and subplots
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# Histogram for ADF p-value with threshold
+sns.histplot(df['ADF p-value'], bins=30, kde=True, ax=axes[0], color='skyblue')
+axes[0].axvline(0.05, color='red', linestyle='--', linewidth=2, label='0.05 threshold')
+axes[0].set_title('ADF p-value Distribution')
+axes[0].set_xlabel('ADF p-value')
+axes[0].legend()
+
+# Histogram for Hurst exponent with thresholds
+sns.histplot(df['Hurst'], bins=30, kde=True, ax=axes[1], color='salmon')
+axes[1].axvline(0.5, color='black', linestyle='--', linewidth=2, label='Random walk (0.5)')
+axes[1].axvline(0.4, color='blue', linestyle='--', linewidth=2, label='Mean-reversion (0.4)')
+axes[1].set_title('Hurst Exponent Distribution')
+axes[1].set_xlabel('Hurst Exponent')
+axes[1].legend()
+
+# Histogram for Half-life with thresholds
+sns.histplot(df['Half-life'], bins=30, kde=True, ax=axes[2], color='lightgreen')
+axes[2].axvline(10, color='blue', linestyle='--', linewidth=2, label='Strong (<10)')
+axes[2].axvline(50, color='red', linestyle='--', linewidth=2, label='Weak (<50)')
+axes[2].set_title('Half-life Distribution')
+axes[2].set_xlabel('Half-life')
+axes[2].legend()
+
+# Final layout
+plt.tight_layout()
+plt.savefig(f"../modelling_result/plots_spread_distribution")
+plt.show()
 # %%

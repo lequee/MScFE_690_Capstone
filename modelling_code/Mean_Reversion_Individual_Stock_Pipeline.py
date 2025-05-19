@@ -99,7 +99,7 @@ def full_mean_reversion_pipeline(tickers, start_date, end_date, metadata_df, win
     tickers = [t for t in tickers if t in prices.columns]
     prices = prices[tickers]
     # prices.to_csv(f"../modelling_result/prices_{start_date[:4]}_{end_date[:4]}.csv", index=False)
-    stat_df = run_mean_reversion_analysis(prices, metadata_df)
+    stat_df = run_mean_reversion_analysis(prices, metadata_df, strategy_type="price")
     backtest_df = run_backtest_all(prices, prices.columns.tolist(), window_list, z_thresh)
     df_report = pd.merge(stat_df, backtest_df, on="Ticker", how="left")
     df_report['Start'] = start_date
@@ -113,7 +113,7 @@ def full_mean_reversion_pipeline(tickers, start_date, end_date, metadata_df, win
 #%% Compare results
 def compare_results(df_report):
     df_report["Mean_Reverting"] = ((df_report['ADF p-value'] < 0.05) | (df_report['Hurst'] < 0.5))
-    df_report["Outperform"] = df_report["Total Return"] > df_report["Benchmark Total Return"]
+    df_report["Outperform"] = df_report["Total Log Return"] > df_report["Benchmark Total Log Return"]
     comparison = df_report.groupby(["Mean_Reverting", "Outperform", "CapSize"]).agg(
         Count=("Ticker", "count"),
         Sharpe_Mean=("Sharpe Ratio", "mean"),
@@ -185,7 +185,10 @@ plot_all_tickers_grid_with_benchmark(df_report, df_report['Ticker'].unique())
 
 # %% Statistical Test Results
 df = combined_df_report[['Ticker', 'Start', 'End', 'ADF p-value', 'Hurst', 'Half-life']].drop_duplicates()
-df['Time Frame'] = df['Start'].astype(str).str[:4] + '-' + df['End'].astype(str).str[:4]
+df['Start'] = pd.to_datetime(df['Start'], errors='coerce')
+df['End'] = pd.to_datetime(df['End'], errors='coerce')
+df = df.dropna(subset=['Start', 'End'])
+df['Time Frame'] = df['Start'].dt.year.astype(int).astype(str) + '-' + df['End'].dt.year.astype(int).astype(str)
 
 # Define classification logic
 def classify_mean_reversion(row):
