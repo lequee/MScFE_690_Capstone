@@ -85,10 +85,13 @@ def benchmark_buy_and_hold(y, x, transaction_cost = 0.001):
     combined_returns.iloc[0] -= transaction_cost
     combined_returns.iloc[-1] -= transaction_cost
     cum_bench = combined_returns.cumsum()
+    sharpe = combined_returns.mean() / (combined_returns.std() + 1e-8) * np.sqrt(252)
     # cum_bench = cum_bench - 2 * transaction_cost
 
-    return {
-        "BuyHold Total Log Return": cum_bench
+    return {       
+        "BuyHold Total Log Return": cum_bench.iloc[-1],
+        "BuyHold Sharpe Ratio": sharpe,
+        "BuyHold Cummulative Return": cum_bench,
     }
 
 
@@ -162,7 +165,8 @@ def backtest_top_pairs(prices, pair_df, top_n=10):
             print(f"Failed backtest for {row['Stock1']} & {row['Stock2']}: {e}")
     return pd.DataFrame(results)
 
-def plot_top_pairs_grid(prices, pair_df, top_n=10, transaction_cost=0.001):
+#%%
+def plot_top_pairs_grid(prices, pair_df, top_n=10, transaction_cost=0.001, title = "Top 10 Pair Trading Strategies: Cummulative Log Return"):
     n_rows = math.ceil(top_n / 2)
     n_cols = 2
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(14, 4 * n_rows), sharex=False)
@@ -178,7 +182,7 @@ def plot_top_pairs_grid(prices, pair_df, top_n=10, transaction_cost=0.001):
         bh_stats = benchmark_buy_and_hold(y, x, transaction_cost=transaction_cost)
 
         cum_strategy = pair_stats["Cummulative Return"]
-        cum_bench = bh_stats["BuyHold Total Log Return"]
+        cum_bench = bh_stats["BuyHold Cummulative Return"]
 
         # Plot
         ax = axes[idx]
@@ -192,9 +196,11 @@ def plot_top_pairs_grid(prices, pair_df, top_n=10, transaction_cost=0.001):
     for ax in axes[top_n:]:
         ax.set_visible(False)
 
-    fig.suptitle("Top Pair Trading Strategies vs. Buy & Hold: Cummulative Log Return", fontsize=16)
+    fig.suptitle(title, fontsize=16)
     fig.tight_layout(rect=[0, 0, 1, 0.97])
+    plt.savefig(f"../modelling_result/plots_{title}_{start_date[:4]}_{end_date[:4]}")
     plt.show()
+
 
 #%%
 start_date = '2010-01-01'
@@ -211,9 +217,10 @@ ticker_cap_mapping = {ticker: 'Large' for ticker in large_cap_tickers}
 ticker_cap_mapping.update({ticker: 'Mid' for ticker in mid_cap_tickers})
 ticker_cap_mapping.update({ticker: 'Small' for ticker in small_cap_tickers})
 
-sector_df = get_sector_info(tickers)
-sector_df['CapSize'] = sector_df['Ticker'].map(ticker_cap_mapping)
-metadata_df = sector_df[['Ticker', 'Sector', 'Industry', 'CapSize']]
+# sector_df = get_sector_info(tickers)
+# sector_df['CapSize'] = sector_df['Ticker'].map(ticker_cap_mapping)
+# metadata_df = sector_df[['Ticker', 'Sector', 'Industry', 'CapSize']]
+metadata_df = pd.read_csv("../data_prices/metadata.csv")
 
 #%%
 def build_pair_metadata(pair_results_df, metadata_df):
@@ -258,12 +265,21 @@ pair_metadata_df = build_pair_metadata(pair_results_df, metadata_df)
 stat_df = run_mean_reversion_analysis(pair_spread, pair_metadata_df, strategy_type="spread")
 
 #%%
-pair_backtest_df = backtest_top_pairs(prices, pair_results_df, top_n=48)
-pair_backtest_df.to_csv(f"../modelling_result/pair_trading_backtest_results_{start_date[:4]}_{end_date[:4]}.csv", index=False)
+# pair_backtest_df = backtest_top_pairs(prices, pair_results_df, top_n=4)
+# pair_backtest_df.to_csv(f"../modelling_result/pair_trading_backtest_results_{start_date[:4]}_{end_date[:4]}.csv", index=False)
+pair_backtest_df = pd.read_csv(f"../modelling_result/pair_trading_backtest_results_{start_date[:4]}_{end_date[:4]}.csv")
+
+#%%
+win = pair_backtest_df[(pair_backtest_df['Total Log Return'] > pair_backtest_df['BuyHold Total Log Return']) & (pair_backtest_df['Sharpe Ratio'] >= pair_backtest_df['BuyHold Sharpe Ratio'])]
+lose = pair_backtest_df[~pair_backtest_df.index.isin(win.index)] 
+
 
 # %%
+top10 = win.sort_values('Total Log Return', ascending=False).head(10)
+bottom10 = win.sort_values('Total Log Return', ascending=True).head(10)
 plot_top_pairs_grid(prices, pair_results_df, top_n=48)
-
+plot_top_pairs_grid(prices, win.sort_values('Total Log Return', ascending=False), top_n=10, title = "Top 10 Pair Trading Strategies: Cummulative Log Return")
+plot_top_pairs_grid(prices, lose.sort_values('Total Log Return', ascending=True), top_n=10, title = "Bottom 10 Pair Trading Strategies: Cummulative Log Return")
 
 #%% Histogram plots
 # Plotting histograms for ADF p-value, Hurst exponent, and Half-life
@@ -286,8 +302,7 @@ axes[0].legend()
 
 # Histogram for Hurst exponent with thresholds
 sns.histplot(df['Hurst'], bins=30, kde=True, ax=axes[1], color='salmon')
-axes[1].axvline(0.5, color='black', linestyle='--', linewidth=2, label='Random walk (0.5)')
-axes[1].axvline(0.4, color='blue', linestyle='--', linewidth=2, label='Mean-reversion (0.4)')
+axes[1].axvline(0.5, color='black', linestyle='--', linewidth=2, label='0.5')
 axes[1].set_title('Hurst Exponent Distribution')
 axes[1].set_xlabel('Hurst Exponent')
 axes[1].legend()
@@ -304,4 +319,258 @@ axes[2].legend()
 plt.tight_layout()
 plt.savefig(f"../modelling_result/plots_spread_distribution")
 plt.show()
+# %%# %%
+def add_metadata_to_pairs(df, metadata_df):
+    """
+    Adds sector/industry/cap size data for Stock1 and Stock2 to a pairs DataFrame.
+    """
+    # Merge metadata for Stock1
+    df = df.merge(
+        metadata_df[['Ticker', 'Sector', 'Industry', 'CapSize']],
+        left_on='Stock1',
+        right_on='Ticker',
+        how='left'
+    ).rename(columns={
+        'Sector': 'Sector1',
+        'Industry': 'Industry1',
+        'CapSize': 'CapSize1'
+    }).drop(columns='Ticker')
+    
+    # Merge metadata for Stock2
+    df = df.merge(
+        metadata_df[['Ticker', 'Sector', 'Industry', 'CapSize']],
+        left_on='Stock2',
+        right_on='Ticker',
+        how='left'
+    ).rename(columns={
+        'Sector': 'Sector2',
+        'Industry': 'Industry2',
+        'CapSize': 'CapSize2'
+    }).drop(columns='Ticker')
+    
+    # Add pair-level flags
+    df['Same_Sector'] = df['Sector1'] == df['Sector2']
+    df['Same_Industry'] = df['Industry1'] == df['Industry2']
+    
+    return df
+
+# Apply to both DataFrames
+win_with_metadata = add_metadata_to_pairs(win, metadata_df)
+lose_with_metadata = add_metadata_to_pairs(lose, metadata_df)
+
+win_with_metadata['label'] = 'Win'
+lose_with_metadata['label'] = 'Lose'
+
+df_all = pd.concat([win_with_metadata, lose_with_metadata], ignore_index=True)
+df_all['Sector_Pair'] = df_all[['Sector1', 'Sector2']].apply(lambda x: ' vs. '.join(sorted([x[0], x[1]])), axis=1)
+
+sector_summary = (
+    df_all
+    .groupby(['Sector_Pair', 'label'])
+    .size()
+    .unstack(fill_value=0)
+    .reset_index()
+    .rename(columns={'Win': 'Win_Count', 'Lose': 'Lose_Count'})
+)
+
+etf_sector_tickers = ['XLC', 'XLY', 'XLP', 'XLE', 'XLF', 'XLV', 'XLI', 'XLB', 'XLRE', 'XLK', 'XLU']
+etf_industry_tickers = ['FDN','IGV','KBE','SOXX','XLE','PJP','IHF','XLP','IPAY','XRT','XLY','WCLD','IHI','XOP','RETL','XAR','PBI','BJK','ITA','TAN','PKB','XBI','SMH','ITB','XLU']
+etf_sector_data = yf.download(etf_sector_tickers, start='2010-01-01', end='2019-12-31', auto_adjust=True)
+etf_industry_data = yf.download(etf_industry_tickers, start='2010-01-01', end='2019-12-31', auto_adjust=True)
+
+etf_sector_data['Close'].to_csv(f"../data_prices/etf_industry_data_{start_date[:4]}_{end_date[:4]}.csv")
+etf_industry_data['Close'].to_csv(f"../data_prices/etf_industry_data_{start_date[:4]}_{end_date[:4]}.csv")
+#%% 
+sector_etfs = {
+    'Consumer Cyclical': 'XLY',
+    'Consumer Defensive': 'XLP',
+    'Financial Services': 'XLF',
+    'Healthcare': 'XLV',
+    'Industrials': 'XLI',
+    'Technology': 'XLK',
+    'Utilities': 'XLU',
+    'Real Estate': 'XLRE',
+    'Energy': 'XLE',
+    'Basic Materials': 'XLB',
+    'Communication Services': 'XLC',
+}
+
+industry_etfs = {
+    'Consumer Electronics': 'FDN',
+    'Software - Infrastructure': 'IGV',
+    'Banks - Diversified': 'KBE',
+    'Semiconductors': 'SOXX',
+    'Oil & Gas Integrated': 'XLE',
+    'Drug Manufacturers - General': 'PJP',
+    'Healthcare Plans': 'IHF',
+    'Household & Personal Products': 'XLP',
+    'Credit Services': 'IPAY',
+    'Home Improvement Retail': 'XRT',
+    'Discount Stores': 'XLY',
+    'Software - Application': 'WCLD',
+    'Medical Instruments & Supplies': 'IHI',
+    'Oil & Gas E&P': 'XOP',
+    'Specialty Retail': 'RETL',
+    'Specialty Industrial Machinery': 'XAR',
+    'Restaurants': 'PBI',
+    'Gambling': 'BJK',
+    'Aerospace & Defense': 'ITA',
+    'Solar': 'TAN',
+    'Building Products & Equipment': 'PKB',
+    'Biotechnology': 'XBI',
+    'Semiconductor Equipment & Materials': 'SMH',
+    'Residential Construction': 'ITB',
+    'Utilities - Regulated Electric': 'XLU'
+}
+
+# Compute daily log returns
+etf_returns = etf_industry_data['Close'].pct_change().dropna()
+
+# Rename columns to sector names
+etf_returns.columns = [k for k, v in industry_etfs.items() if v in etf_returns.columns]
+
+# Correlation matrix between sector returns
+corr_matrix = etf_returns.corr()
+
+# %%
+correlation_df = corr_matrix.reset_index().melt(id_vars='index')
+# correlation_df.columns = ['Sector1', 'Sector2', 'ETF Correlation']
+correlation_df.columns = ['Industry1', 'Industry2', 'ETF Correlation']
+# correlation_df.to_csv(f"../data_prices/etf_industry_correlation_{start_date[:4]}_{end_date[:4]}.csv", index=False)
+
+# Remove self-pairs (diagonal)
+# correlation_df = correlation_df[correlation_df['Sector1'] != correlation_df['Sector2']]
+correlation_df = correlation_df[correlation_df['Industry1'] != correlation_df['Industry2']]
+
+# Create a helper column for unordered pairs
+# correlation_df['PairKey'] = correlation_df.apply(lambda row: frozenset([row['Sector1'], row['Sector2']]), axis=1)
+correlation_df['PairKey'] = correlation_df.apply(lambda row: frozenset([row['Industry1'], row['Industry2']]), axis=1)
+
+# Drop duplicate unordered sector pairs
+correlation_df = correlation_df.drop_duplicates(subset='PairKey').drop(columns='PairKey')
+
+#%%
+# %%
+def add_sector_correlation_column(pair_df, correlation_df):
+    df = pair_df.copy()
+
+    # Create key for matching sectors regardless of order
+    df['SectorPairKey'] = df.apply(lambda row: frozenset([row['Sector1'], row['Sector2']]), axis=1)
+    correlation_df['SectorPairKey'] = correlation_df.apply(lambda row: frozenset([row['Sector1'], row['Sector2']]), axis=1)
+
+    # Remove duplicates
+    correlation_df = correlation_df.drop_duplicates(subset='SectorPairKey')
+
+    # Create mapping
+    corr_map = dict(zip(correlation_df['SectorPairKey'], correlation_df['ETF Correlation']))
+    df['ETF Correlation'] = df['SectorPairKey'].map(corr_map)
+
+    # Classify correlation type
+    def classify_corr(corr):
+        if pd.isna(corr):
+            return 'Unknown'
+        elif corr >= 0.7:
+            return 'Highly Correlated'
+        elif corr >= 0.3:
+            return 'Moderately Correlated'
+        elif corr <= -0.3:
+            return 'Inversely Correlated'
+        else:
+            return 'Uncorrelated'
+
+    df['Correlation Category'] = df['ETF Correlation'].apply(classify_corr)
+
+    return df.drop(columns='SectorPairKey')
+
+# %%
+win_with_corr = add_sector_correlation_column(win_with_metadata, correlation_df)
+lose_with_corr = add_sector_correlation_column(lose_with_metadata, correlation_df)
+
+#%%
+sns.set(style='whitegrid')
+
+# Set up the figure and subplots
+fig, axes = plt.subplots(1, 2, figsize=(18, 5))
+
+# Histogram for ADF p-value with threshold
+
+bins = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+sns.histplot(win_with_corr['ETF Correlation'], ax=axes[0], kde=True, color='salmon')
+axes[0].set_title('industry Correlation Distribution in Win cases')
+
+# Histogram for Hurst exponent with thresholds
+sns.histplot(lose_with_corr['ETF Correlation'], ax=axes[1], kde=True, color='salmon')
+axes[1].set_title('Industry Correlation Distribution in Lose cases')
+
+
+# Final layout
+plt.tight_layout()
+plt.savefig(f"../modelling_result/plot_etf_industry_distribution")
+plt.show()
+
+# %%
+redundant_cols = ['Sector1', 'Sector2', 'Industry1', 'Industry2', 'CapSize1', 'CapSize2']
+stat_df = stat_df.drop(columns=redundant_cols, errors='ignore')
+
+lose_with_corr['Ticker'] = lose_with_corr['Stock1'] + '_' + lose_with_corr['Stock2']
+lose_with_corr = lose_with_corr.merge(stat_df, on='Ticker', how='left')
+
+win_with_corr['Ticker'] = win_with_corr['Stock1'] + '_' + win_with_corr['Stock2']
+win_with_corr = win_with_corr.merge(stat_df, on='Ticker', how='left')
+
+#%% Technical Analysis
+import pandas as pd
+import numpy as np
+from tools.utils import adf_test, calculate_hurst_exponent, fit_ornstein_uhlenbeck
+
+
+def compute_spread_volatility(price1, price2):
+    spread = price1 - price2
+    return spread.std()
+
+def compute_liquidity_ratio(volume1, volume2):
+    return (volume1 / volume2).mean()
+
+def compute_volatility_ratio(price1, price2):
+    returns1 = price1.pct_change().dropna()
+    returns2 = price2.pct_change().dropna()
+    return returns1.std() / returns2.std()
+
+
+def analyze_technical_features(pair_df, price_df, volume_df):
+    """
+    price_data_dict: dict of {ticker: price_series}
+    volume_data_dict: dict of {ticker: volume_series}
+    """
+    results = []
+    
+    for idx, row in pair_df.iterrows():
+        s1, s2 = row['Stock1'], row['Stock2']
+        p1, p2 = price_df[s1].reset_index(drop=True), price_df[s2].reset_index(drop=True)
+        v1, v2 = volume_df[s1].reset_index(drop=True), volume_df[s2].reset_index(drop=True)
+
+        # Align by date
+        df = pd.concat([p1, p2, v1, v2], axis=1).dropna()
+        price1, price2 = df.iloc[:,0], df.iloc[:,1]
+        vol1, vol2 = df.iloc[:,2], df.iloc[:,3]
+
+        spread_volatility = compute_spread_volatility(price1, price2)
+        liquidity_diff = compute_liquidity_ratio(vol1, vol2)
+        volatility_ratio = compute_volatility_ratio(price1, price2)
+
+        results.append({
+            'Stock1': s1,
+            'Stock2': s2,
+            'Spread_Volatility': spread_volatility,
+            'Liquidity_Diff': liquidity_diff,
+            'Volatility_Ratio': volatility_ratio
+        })
+
+    return pd.DataFrame(results)
+
+
+# %%
+volume_df = pd.read_csv(f"../data_prices/volume_2010_2019.csv")
+win_technical = analyze_technical_features(win_with_corr, prices, volume_df)
+lose_technical = analyze_technical_features(win_with_corr, prices, volume_df)
 # %%

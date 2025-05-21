@@ -1,0 +1,48 @@
+Ticker,Sector,Industry,CapSize
+AAPL,Technology,Consumer Electronics,Large
+MSFT,Technology,Software - Infrastructure,Large
+JPM,Financial Services,Banks - Diversified,Large
+NVDA,Technology,Semiconductors,Large
+XOM,Energy,Oil & Gas Integrated,Large
+JNJ,Healthcare,Drug Manufacturers - General,Large
+UNH,Healthcare,Healthcare Plans,Large
+PG,Consumer Defensive,Household & Personal Products,Large
+V,Financial Services,Credit Services,Large
+MA,Financial Services,Credit Services,Large
+HD,Consumer Cyclical,Home Improvement Retail,Large
+COST,Consumer Defensive,Discount Stores,Large
+AVGO,Technology,Semiconductors,Large
+LLY,Healthcare,Drug Manufacturers - General,Large
+BAC,Financial Services,Banks - Diversified,Large
+MRK,Healthcare,Drug Manufacturers - General,Large
+ADBE,Technology,Software - Application,Large
+TFX,Healthcare,Medical Instruments & Supplies,Mid
+HES,Energy,Oil & Gas E&P,Mid
+NTNX,Technology,Software - Infrastructure,Mid
+WU,Financial Services,Credit Services,Mid
+FIVE,Consumer Cyclical,Specialty Retail,Mid
+GNRC,Industrials,Specialty Industrial Machinery,Mid
+WING,Consumer Cyclical,Restaurants,Mid
+CHDN,Consumer Cyclical,Gambling,Mid
+FND,Consumer Cyclical,Home Improvement Retail,Mid
+HWM,Industrials,Aerospace & Defense,Mid
+CROX,Consumer Cyclical,Footwear & Accessories,Mid
+ENPH,Technology,Solar,Mid
+FICO,Technology,Software - Application,Mid
+ROK,Industrials,Specialty Industrial Machinery,Mid
+LII,Industrials,Building Products & Equipment,Mid
+INSM,Healthcare,Biotechnology,Small
+NEOG,Healthcare,Diagnostics & Research,Small
+ACLS,Technology,Semiconductor Equipment & Materials,Small
+PRDO,Consumer Defensive,Education & Training Services,Small
+ORGO,Healthcare,Drug Manufacturers - Specialty & Generic,Small
+IMMR,Technology,Software - Application,Small
+CVCO,Consumer Cyclical,Residential Construction,Small
+GPRO,Technology,Consumer Electronics,Small
+STRL,Industrials,Engineering & Construction,Small
+TPC,Industrials,Engineering & Construction,Small
+GHC,Consumer Defensive,Education & Training Services,Small
+FIZZ,Consumer Defensive,Beverages - Non-Alcoholic,Small
+EVTC,Technology,Software - Infrastructure,Small
+CMTL,Technology,Communication Equipment,Small
+MGEE,Utilities,Utilities - Regulated Electric,Small

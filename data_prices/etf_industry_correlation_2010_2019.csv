@@ -1,0 +1,626 @@
+Industry1,Industry2,ETF Correlation
+Consumer Electronics,Consumer Electronics,1.0
+Software - Infrastructure,Consumer Electronics,0.4979580940382583
+Banks - Diversified,Consumer Electronics,0.4012722683050204
+Semiconductors,Consumer Electronics,0.3141372668942607
+Oil & Gas Integrated,Consumer Electronics,0.24619255596310632
+Drug Manufacturers - General,Consumer Electronics,0.39453890252670515
+Healthcare Plans,Consumer Electronics,0.286903904080194
+Household & Personal Products,Consumer Electronics,-0.05936644439013501
+Credit Services,Consumer Electronics,0.5462799883644942
+Home Improvement Retail,Consumer Electronics,0.06789870037962903
+Discount Stores,Consumer Electronics,0.4082589537522876
+Software - Application,Consumer Electronics,0.14752107800407527
+Medical Instruments & Supplies,Consumer Electronics,0.4631428645437826
+Oil & Gas E&P,Consumer Electronics,0.6439547171476383
+Specialty Retail,Consumer Electronics,0.645902625695053
+Specialty Industrial Machinery,Consumer Electronics,0.26319144987844184
+Restaurants,Consumer Electronics,0.319644830794846
+Gambling,Consumer Electronics,0.3343038889210151
+Aerospace & Defense,Consumer Electronics,0.38024254779886724
+Solar,Consumer Electronics,0.41544856029294003
+Building Products & Equipment,Consumer Electronics,0.0761928400227183
+Biotechnology,Consumer Electronics,-0.14337260363808918
+Semiconductor Equipment & Materials,Consumer Electronics,0.5133778610638741
+Residential Construction,Consumer Electronics,0.3399731757821791
+Utilities - Regulated Electric,Consumer Electronics,0.4624661997065475
+Consumer Electronics,Software - Infrastructure,0.4979580940382583
+Software - Infrastructure,Software - Infrastructure,1.0
+Banks - Diversified,Software - Infrastructure,0.8213489242700095
+Semiconductors,Software - Infrastructure,0.41246727784791554
+Oil & Gas Integrated,Software - Infrastructure,0.6275030295609223
+Drug Manufacturers - General,Software - Infrastructure,0.7189977572911697
+Healthcare Plans,Software - Infrastructure,0.48513790275206947
+Household & Personal Products,Software - Infrastructure,0.17002021099316045
+Credit Services,Software - Infrastructure,0.4206826520335281
+Home Improvement Retail,Software - Infrastructure,0.07472800119797574
+Discount Stores,Software - Infrastructure,0.6224546935099781
+Software - Application,Software - Infrastructure,0.38753484943970823
+Medical Instruments & Supplies,Software - Infrastructure,0.4639319517010151
+Oil & Gas E&P,Software - Infrastructure,0.701064149340912
+Specialty Retail,Software - Infrastructure,0.7133692991914377
+Specialty Industrial Machinery,Software - Infrastructure,0.4677766556457051
+Restaurants,Software - Infrastructure,0.6472799076306032
+Gambling,Software - Infrastructure,0.5219415623091272
+Aerospace & Defense,Software - Infrastructure,0.5293072096821575
+Solar,Software - Infrastructure,0.3144361041911973
+Building Products & Equipment,Software - Infrastructure,0.32954583211856614
+Biotechnology,Software - Infrastructure,0.12912201294738684
+Semiconductor Equipment & Materials,Software - Infrastructure,0.7166442557160391
+Residential Construction,Software - Infrastructure,0.20799360085923033
+Utilities - Regulated Electric,Software - Infrastructure,0.46616047104171127
+Consumer Electronics,Banks - Diversified,0.4012722683050204
+Software - Infrastructure,Banks - Diversified,0.8213489242700095
+Banks - Diversified,Banks - Diversified,1.0
+Semiconductors,Banks - Diversified,0.2681487859186751
+Oil & Gas Integrated,Banks - Diversified,0.6114132112957644
+Drug Manufacturers - General,Banks - Diversified,0.798699690518579
+Healthcare Plans,Banks - Diversified,0.5666116940224847
+Household & Personal Products,Banks - Diversified,0.17890042419631252
+Credit Services,Banks - Diversified,0.17927780161830928
+Home Improvement Retail,Banks - Diversified,-0.05615386855096305
+Discount Stores,Banks - Diversified,0.4301010997164076
+Software - Application,Banks - Diversified,0.37700549354542146
+Medical Instruments & Supplies,Banks - Diversified,0.1886284742427765
+Oil & Gas E&P,Banks - Diversified,0.6497933248914454
+Specialty Retail,Banks - Diversified,0.6428323345575762
+Specialty Industrial Machinery,Banks - Diversified,0.4451830717050174
+Restaurants,Banks - Diversified,0.7677226455238737
+Gambling,Banks - Diversified,0.5911464500496351
+Aerospace & Defense,Banks - Diversified,0.40020119120238923
+Solar,Banks - Diversified,0.18631401869011124
+Building Products & Equipment,Banks - Diversified,0.37485958238368905
+Biotechnology,Banks - Diversified,0.19644700622810332
+Semiconductor Equipment & Materials,Banks - Diversified,0.4974443245723523
+Residential Construction,Banks - Diversified,0.0960645179511922
+Utilities - Regulated Electric,Banks - Diversified,0.18199465544520108
+Consumer Electronics,Semiconductors,0.3141372668942607
+Software - Infrastructure,Semiconductors,0.41246727784791554
+Banks - Diversified,Semiconductors,0.2681487859186751
+Semiconductors,Semiconductors,1.0
+Oil & Gas Integrated,Semiconductors,0.4200813810413713
+Drug Manufacturers - General,Semiconductors,0.1359208492281769
+Healthcare Plans,Semiconductors,0.22339420739328067
+Household & Personal Products,Semiconductors,0.014058373544092851
+Credit Services,Semiconductors,0.45554073778815735
+Home Improvement Retail,Semiconductors,0.145234017134514
+Discount Stores,Semiconductors,0.6365655986895301
+Software - Application,Semiconductors,0.15517481565412747
+Medical Instruments & Supplies,Semiconductors,0.3948158726273236
+Oil & Gas E&P,Semiconductors,0.33324485881108523
+Specialty Retail,Semiconductors,0.34347481030883004
+Specialty Industrial Machinery,Semiconductors,0.13651565625055476
+Restaurants,Semiconductors,0.15522501124418353
+Gambling,Semiconductors,0.2760685516290666
+Aerospace & Defense,Semiconductors,0.5336424061881697
+Solar,Semiconductors,0.4047138264335522
+Building Products & Equipment,Semiconductors,0.007467274108832115
+Biotechnology,Semiconductors,-0.03395256543331337
+Semiconductor Equipment & Materials,Semiconductors,0.29855227249698985
+Residential Construction,Semiconductors,0.3803508652489956
+Utilities - Regulated Electric,Semiconductors,0.38533141873347904
+Consumer Electronics,Oil & Gas Integrated,0.24619255596310632
+Software - Infrastructure,Oil & Gas Integrated,0.6275030295609223
+Banks - Diversified,Oil & Gas Integrated,0.6114132112957644
+Semiconductors,Oil & Gas Integrated,0.4200813810413713
+Oil & Gas Integrated,Oil & Gas Integrated,1.0
+Drug Manufacturers - General,Oil & Gas Integrated,0.6679146906937409
+Healthcare Plans,Oil & Gas Integrated,0.39453564778052064
+Household & Personal Products,Oil & Gas Integrated,0.18338335429858352
+Credit Services,Oil & Gas Integrated,0.2288650249300742
+Home Improvement Retail,Oil & Gas Integrated,-0.14767205585296245
+Discount Stores,Oil & Gas Integrated,0.558806465014288
+Software - Application,Oil & Gas Integrated,0.3675819506303332
+Medical Instruments & Supplies,Oil & Gas Integrated,0.11051103725332288
+Oil & Gas E&P,Oil & Gas Integrated,0.4775774847791256
+Specialty Retail,Oil & Gas Integrated,0.4788729332954909
+Specialty Industrial Machinery,Oil & Gas Integrated,0.37781173358951436
+Restaurants,Oil & Gas Integrated,0.4564828760415319
+Gambling,Oil & Gas Integrated,0.45042259799550294
+Aerospace & Defense,Oil & Gas Integrated,0.3687034230540666
+Solar,Oil & Gas Integrated,0.16581533260901468
+Building Products & Equipment,Oil & Gas Integrated,0.49585770499663206
+Biotechnology,Oil & Gas Integrated,0.34639983779537964
+Semiconductor Equipment & Materials,Oil & Gas Integrated,0.45130866102040107
+Residential Construction,Oil & Gas Integrated,0.07293914308186403
+Utilities - Regulated Electric,Oil & Gas Integrated,0.10707071341726582
+Consumer Electronics,Drug Manufacturers - General,0.39453890252670515
+Software - Infrastructure,Drug Manufacturers - General,0.7189977572911697
+Banks - Diversified,Drug Manufacturers - General,0.798699690518579
+Semiconductors,Drug Manufacturers - General,0.1359208492281769
+Oil & Gas Integrated,Drug Manufacturers - General,0.6679146906937409
+Drug Manufacturers - General,Drug Manufacturers - General,1.0
+Healthcare Plans,Drug Manufacturers - General,0.5284897158524867
+Household & Personal Products,Drug Manufacturers - General,0.23658712877118562
+Credit Services,Drug Manufacturers - General,0.15657877531712028
+Home Improvement Retail,Drug Manufacturers - General,-0.16265073761334087
+Discount Stores,Drug Manufacturers - General,0.3426538456673253
+Software - Application,Drug Manufacturers - General,0.4488230306270192
+Medical Instruments & Supplies,Drug Manufacturers - General,0.13213298875525406
+Oil & Gas E&P,Drug Manufacturers - General,0.6098255741214931
+Specialty Retail,Drug Manufacturers - General,0.5890262418475367
+Specialty Industrial Machinery,Drug Manufacturers - General,0.4148508418300872
+Restaurants,Drug Manufacturers - General,0.6039035230954225
+Gambling,Drug Manufacturers - General,0.5446929028678134
+Aerospace & Defense,Drug Manufacturers - General,0.22901521420790955
+Solar,Drug Manufacturers - General,0.11688500579364623
+Building Products & Equipment,Drug Manufacturers - General,0.49057350042397285
+Biotechnology,Drug Manufacturers - General,0.25014059675674666
+Semiconductor Equipment & Materials,Drug Manufacturers - General,0.5806773540369973
+Residential Construction,Drug Manufacturers - General,0.021921291038626785
+Utilities - Regulated Electric,Drug Manufacturers - General,0.13476486844881308
+Consumer Electronics,Healthcare Plans,0.286903904080194
+Software - Infrastructure,Healthcare Plans,0.48513790275206947
+Banks - Diversified,Healthcare Plans,0.5666116940224847
+Semiconductors,Healthcare Plans,0.22339420739328067
+Oil & Gas Integrated,Healthcare Plans,0.39453564778052064
+Drug Manufacturers - General,Healthcare Plans,0.5284897158524867
+Healthcare Plans,Healthcare Plans,1.0
+Household & Personal Products,Healthcare Plans,0.2860986646254207
+Credit Services,Healthcare Plans,0.2300064050254686
+Home Improvement Retail,Healthcare Plans,0.052128130341313236
+Discount Stores,Healthcare Plans,0.38543733027867205
+Software - Application,Healthcare Plans,0.4323777504090134
+Medical Instruments & Supplies,Healthcare Plans,0.2682943840806961
+Oil & Gas E&P,Healthcare Plans,0.4762848579149222
+Specialty Retail,Healthcare Plans,0.4677847092572102
+Specialty Industrial Machinery,Healthcare Plans,0.25339729965737756
+Restaurants,Healthcare Plans,0.4262892857006599
+Gambling,Healthcare Plans,0.89086264438756
+Aerospace & Defense,Healthcare Plans,0.28847370460533645
+Solar,Healthcare Plans,0.2738155799301424
+Building Products & Equipment,Healthcare Plans,0.2838556213030623
+Biotechnology,Healthcare Plans,0.14557755731494576
+Semiconductor Equipment & Materials,Healthcare Plans,0.3863670949785462
+Residential Construction,Healthcare Plans,0.20617560915642236
+Utilities - Regulated Electric,Healthcare Plans,0.2689297946551696
+Consumer Electronics,Household & Personal Products,-0.05936644439013501
+Software - Infrastructure,Household & Personal Products,0.17002021099316045
+Banks - Diversified,Household & Personal Products,0.17890042419631252
+Semiconductors,Household & Personal Products,0.014058373544092851
+Oil & Gas Integrated,Household & Personal Products,0.18338335429858352
+Drug Manufacturers - General,Household & Personal Products,0.23658712877118562
+Healthcare Plans,Household & Personal Products,0.2860986646254207
+Household & Personal Products,Household & Personal Products,1.0
+Credit Services,Household & Personal Products,0.018017115700292814
+Home Improvement Retail,Household & Personal Products,-0.03927568993455862
+Discount Stores,Household & Personal Products,0.02059233047609637
+Software - Application,Household & Personal Products,0.8892828770050347
+Medical Instruments & Supplies,Household & Personal Products,0.05177894164599503
+Oil & Gas E&P,Household & Personal Products,0.13029479799336074
+Specialty Retail,Household & Personal Products,0.12501998686360977
+Specialty Industrial Machinery,Household & Personal Products,0.03294315806426899
+Restaurants,Household & Personal Products,0.16166894305038357
+Gambling,Household & Personal Products,0.32411860624147504
+Aerospace & Defense,Household & Personal Products,0.04930818178991886
+Solar,Household & Personal Products,-0.21861029008094043
+Building Products & Equipment,Household & Personal Products,0.4477905383875892
+Biotechnology,Household & Personal Products,0.477360470649208
+Semiconductor Equipment & Materials,Household & Personal Products,0.3504771390053873
+Residential Construction,Household & Personal Products,-0.2521367782519988
+Utilities - Regulated Electric,Household & Personal Products,0.0442733245452546
+Consumer Electronics,Credit Services,0.5462799883644942
+Software - Infrastructure,Credit Services,0.4206826520335281
+Banks - Diversified,Credit Services,0.17927780161830928
+Semiconductors,Credit Services,0.45554073778815735
+Oil & Gas Integrated,Credit Services,0.2288650249300742
+Drug Manufacturers - General,Credit Services,0.15657877531712028
+Healthcare Plans,Credit Services,0.2300064050254686
+Household & Personal Products,Credit Services,0.018017115700292814
+Credit Services,Credit Services,1.0
+Home Improvement Retail,Credit Services,0.4210572278535309
+Discount Stores,Credit Services,0.5411805777646828
+Software - Application,Credit Services,0.2233257280248566
+Medical Instruments & Supplies,Credit Services,0.7289132172541782
+Oil & Gas E&P,Credit Services,0.5916999613569149
+Specialty Retail,Credit Services,0.6130720613131148
+Specialty Industrial Machinery,Credit Services,0.22788764508118334
+Restaurants,Credit Services,0.009328832677098322
+Gambling,Credit Services,0.27636479153044063
+Aerospace & Defense,Credit Services,0.4384559155160072
+Solar,Credit Services,0.7009275447249746
+Building Products & Equipment,Credit Services,0.01477492110955751
+Biotechnology,Credit Services,-0.1903545197636442
+Semiconductor Equipment & Materials,Credit Services,0.5008188697127419
+Residential Construction,Credit Services,0.6157813108820981
+Utilities - Regulated Electric,Credit Services,0.7188590282873569
+Consumer Electronics,Home Improvement Retail,0.06789870037962903
+Software - Infrastructure,Home Improvement Retail,0.07472800119797574
+Banks - Diversified,Home Improvement Retail,-0.05615386855096305
+Semiconductors,Home Improvement Retail,0.145234017134514
+Oil & Gas Integrated,Home Improvement Retail,-0.14767205585296245
+Drug Manufacturers - General,Home Improvement Retail,-0.16265073761334087
+Healthcare Plans,Home Improvement Retail,0.052128130341313236
+Household & Personal Products,Home Improvement Retail,-0.03927568993455862
+Credit Services,Home Improvement Retail,0.4210572278535309
+Home Improvement Retail,Home Improvement Retail,1.0
+Discount Stores,Home Improvement Retail,0.18626916897287996
+Software - Application,Home Improvement Retail,0.08523170347584992
+Medical Instruments & Supplies,Home Improvement Retail,0.4520405250981362
+Oil & Gas E&P,Home Improvement Retail,0.1477242703255814
+Specialty Retail,Home Improvement Retail,0.17047708726581576
+Specialty Industrial Machinery,Home Improvement Retail,0.1791265558904831
+Restaurants,Home Improvement Retail,-0.050679189401273694
+Gambling,Home Improvement Retail,0.035838601728632416
+Aerospace & Defense,Home Improvement Retail,0.24254439571894978
+Solar,Home Improvement Retail,0.46721361603412387
+Building Products & Equipment,Home Improvement Retail,-0.09299331248676362
+Biotechnology,Home Improvement Retail,-0.22516107355622467
+Semiconductor Equipment & Materials,Home Improvement Retail,0.12597001505023275
+Residential Construction,Home Improvement Retail,0.4202892690901303
+Utilities - Regulated Electric,Home Improvement Retail,0.4400698947564336
+Consumer Electronics,Discount Stores,0.4082589537522876
+Software - Infrastructure,Discount Stores,0.6224546935099781
+Banks - Diversified,Discount Stores,0.4301010997164076
+Semiconductors,Discount Stores,0.6365655986895301
+Oil & Gas Integrated,Discount Stores,0.558806465014288
+Drug Manufacturers - General,Discount Stores,0.3426538456673253
+Healthcare Plans,Discount Stores,0.38543733027867205
+Household & Personal Products,Discount Stores,0.02059233047609637
+Credit Services,Discount Stores,0.5411805777646828
+Home Improvement Retail,Discount Stores,0.18626916897287996
+Discount Stores,Discount Stores,1.0
+Software - Application,Discount Stores,0.22914560617553403
+Medical Instruments & Supplies,Discount Stores,0.4974744322524528
+Oil & Gas E&P,Discount Stores,0.49854646726552326
+Specialty Retail,Discount Stores,0.5266228984346872
+Specialty Industrial Machinery,Discount Stores,0.3441717845531193
+Restaurants,Discount Stores,0.3246535870899866
+Gambling,Discount Stores,0.42146055211774297
+Aerospace & Defense,Discount Stores,0.8060584596020968
+Solar,Discount Stores,0.43734349982562876
+Building Products & Equipment,Discount Stores,0.12110652194292373
+Biotechnology,Discount Stores,-0.001211642076725753
+Semiconductor Equipment & Materials,Discount Stores,0.39962430083831435
+Residential Construction,Discount Stores,0.37712579798080137
+Utilities - Regulated Electric,Discount Stores,0.48620224884682606
+Consumer Electronics,Software - Application,0.14752107800407527
+Software - Infrastructure,Software - Application,0.38753484943970823
+Banks - Diversified,Software - Application,0.37700549354542146
+Semiconductors,Software - Application,0.15517481565412747
+Oil & Gas Integrated,Software - Application,0.3675819506303332
+Drug Manufacturers - General,Software - Application,0.4488230306270192
+Healthcare Plans,Software - Application,0.4323777504090134
+Household & Personal Products,Software - Application,0.8892828770050347
+Credit Services,Software - Application,0.2233257280248566
+Home Improvement Retail,Software - Application,0.08523170347584992
+Discount Stores,Software - Application,0.22914560617553403
+Software - Application,Software - Application,1.0
+Medical Instruments & Supplies,Software - Application,0.2003120343723249
+Oil & Gas E&P,Software - Application,0.38096764473854333
+Specialty Retail,Software - Application,0.37002968133972725
+Specialty Industrial Machinery,Software - Application,0.24994401181026937
+Restaurants,Software - Application,0.3275167656732406
+Gambling,Software - Application,0.47478160675335646
+Aerospace & Defense,Software - Application,0.2150189546503945
+Solar,Software - Application,-0.0008799143963327515
+Building Products & Equipment,Software - Application,0.4442731082923707
+Biotechnology,Software - Application,0.3912027361053676
+Semiconductor Equipment & Materials,Software - Application,0.48913186026641103
+Residential Construction,Software - Application,-0.06138240653237124
+Utilities - Regulated Electric,Software - Application,0.18971896290687312
+Consumer Electronics,Medical Instruments & Supplies,0.4631428645437826
+Software - Infrastructure,Medical Instruments & Supplies,0.4639319517010151
+Banks - Diversified,Medical Instruments & Supplies,0.1886284742427765
+Semiconductors,Medical Instruments & Supplies,0.3948158726273236
+Oil & Gas Integrated,Medical Instruments & Supplies,0.11051103725332288
+Drug Manufacturers - General,Medical Instruments & Supplies,0.13213298875525406
+Healthcare Plans,Medical Instruments & Supplies,0.2682943840806961
+Household & Personal Products,Medical Instruments & Supplies,0.05177894164599503
+Credit Services,Medical Instruments & Supplies,0.7289132172541782
+Home Improvement Retail,Medical Instruments & Supplies,0.4520405250981362
+Discount Stores,Medical Instruments & Supplies,0.4974744322524528
+Software - Application,Medical Instruments & Supplies,0.2003120343723249
+Medical Instruments & Supplies,Medical Instruments & Supplies,1.0
+Oil & Gas E&P,Medical Instruments & Supplies,0.5523127829467297
+Specialty Retail,Medical Instruments & Supplies,0.5742354044831839
+Specialty Industrial Machinery,Medical Instruments & Supplies,0.12921418835663423
+Restaurants,Medical Instruments & Supplies,0.1052278660596785
+Gambling,Medical Instruments & Supplies,0.17998752563913684
+Aerospace & Defense,Medical Instruments & Supplies,0.3396075475917597
+Solar,Medical Instruments & Supplies,0.5604117232951171
+Building Products & Equipment,Medical Instruments & Supplies,0.1562068150302774
+Biotechnology,Medical Instruments & Supplies,-0.11740321511580024
+Semiconductor Equipment & Materials,Medical Instruments & Supplies,0.6269800910402891
+Residential Construction,Medical Instruments & Supplies,0.4976678434126547
+Utilities - Regulated Electric,Medical Instruments & Supplies,0.9969991214134883
+Consumer Electronics,Oil & Gas E&P,0.6439547171476383
+Software - Infrastructure,Oil & Gas E&P,0.701064149340912
+Banks - Diversified,Oil & Gas E&P,0.6497933248914454
+Semiconductors,Oil & Gas E&P,0.33324485881108523
+Oil & Gas Integrated,Oil & Gas E&P,0.4775774847791256
+Drug Manufacturers - General,Oil & Gas E&P,0.6098255741214931
+Healthcare Plans,Oil & Gas E&P,0.4762848579149222
+Household & Personal Products,Oil & Gas E&P,0.13029479799336074
+Credit Services,Oil & Gas E&P,0.5916999613569149
+Home Improvement Retail,Oil & Gas E&P,0.1477242703255814
+Discount Stores,Oil & Gas E&P,0.49854646726552326
+Software - Application,Oil & Gas E&P,0.38096764473854333
+Medical Instruments & Supplies,Oil & Gas E&P,0.5523127829467297
+Oil & Gas E&P,Oil & Gas E&P,1.0
+Specialty Retail,Oil & Gas E&P,0.9921715953805287
+Specialty Industrial Machinery,Oil & Gas E&P,0.35612619381699123
+Restaurants,Oil & Gas E&P,0.4819324896506252
+Gambling,Oil & Gas E&P,0.46807007461185485
+Aerospace & Defense,Oil & Gas E&P,0.3913125851021477
+Solar,Oil & Gas E&P,0.44930808981137327
+Building Products & Equipment,Oil & Gas E&P,0.2584572835007559
+Biotechnology,Oil & Gas E&P,-0.020959030313254825
+Semiconductor Equipment & Materials,Oil & Gas E&P,0.6844803925471185
+Residential Construction,Oil & Gas E&P,0.33551581217279186
+Utilities - Regulated Electric,Oil & Gas E&P,0.5522426536555054
+Consumer Electronics,Specialty Retail,0.645902625695053
+Software - Infrastructure,Specialty Retail,0.7133692991914377
+Banks - Diversified,Specialty Retail,0.6428323345575762
+Semiconductors,Specialty Retail,0.34347481030883004
+Oil & Gas Integrated,Specialty Retail,0.4788729332954909
+Drug Manufacturers - General,Specialty Retail,0.5890262418475367
+Healthcare Plans,Specialty Retail,0.4677847092572102
+Household & Personal Products,Specialty Retail,0.12501998686360977
+Credit Services,Specialty Retail,0.6130720613131148
+Home Improvement Retail,Specialty Retail,0.17047708726581576
+Discount Stores,Specialty Retail,0.5266228984346872
+Software - Application,Specialty Retail,0.37002968133972725
+Medical Instruments & Supplies,Specialty Retail,0.5742354044831839
+Oil & Gas E&P,Specialty Retail,0.9921715953805287
+Specialty Retail,Specialty Retail,1.0
+Specialty Industrial Machinery,Specialty Retail,0.3484056817788221
+Restaurants,Specialty Retail,0.4687479337687573
+Gambling,Specialty Retail,0.46757337163293505
+Aerospace & Defense,Specialty Retail,0.43492791747116566
+Solar,Specialty Retail,0.4643542222650958
+Building Products & Equipment,Specialty Retail,0.23911549156170908
+Biotechnology,Specialty Retail,-0.03335152981546918
+Semiconductor Equipment & Materials,Specialty Retail,0.6824971102715485
+Residential Construction,Specialty Retail,0.35582500445412907
+Utilities - Regulated Electric,Specialty Retail,0.5731466974856348
+Consumer Electronics,Specialty Industrial Machinery,0.26319144987844184
+Software - Infrastructure,Specialty Industrial Machinery,0.4677766556457051
+Banks - Diversified,Specialty Industrial Machinery,0.4451830717050174
+Semiconductors,Specialty Industrial Machinery,0.13651565625055476
+Oil & Gas Integrated,Specialty Industrial Machinery,0.37781173358951436
+Drug Manufacturers - General,Specialty Industrial Machinery,0.4148508418300872
+Healthcare Plans,Specialty Industrial Machinery,0.25339729965737756
+Household & Personal Products,Specialty Industrial Machinery,0.03294315806426899
+Credit Services,Specialty Industrial Machinery,0.22788764508118334
+Home Improvement Retail,Specialty Industrial Machinery,0.1791265558904831
+Discount Stores,Specialty Industrial Machinery,0.3441717845531193
+Software - Application,Specialty Industrial Machinery,0.24994401181026937
+Medical Instruments & Supplies,Specialty Industrial Machinery,0.12921418835663423
+Oil & Gas E&P,Specialty Industrial Machinery,0.35612619381699123
+Specialty Retail,Specialty Industrial Machinery,0.3484056817788221
+Specialty Industrial Machinery,Specialty Industrial Machinery,1.0
+Restaurants,Specialty Industrial Machinery,0.3256467938170834
+Gambling,Specialty Industrial Machinery,0.3685427220734583
+Aerospace & Defense,Specialty Industrial Machinery,0.3845040352287662
+Solar,Specialty Industrial Machinery,0.27582333715404
+Building Products & Equipment,Specialty Industrial Machinery,0.13317304170949515
+Biotechnology,Specialty Industrial Machinery,0.058480994133021505
+Semiconductor Equipment & Materials,Specialty Industrial Machinery,0.3081229905830535
+Residential Construction,Specialty Industrial Machinery,0.22277275166201724
+Utilities - Regulated Electric,Specialty Industrial Machinery,0.12321684743099182
+Consumer Electronics,Restaurants,0.319644830794846
+Software - Infrastructure,Restaurants,0.6472799076306032
+Banks - Diversified,Restaurants,0.7677226455238737
+Semiconductors,Restaurants,0.15522501124418353
+Oil & Gas Integrated,Restaurants,0.4564828760415319
+Drug Manufacturers - General,Restaurants,0.6039035230954225
+Healthcare Plans,Restaurants,0.4262892857006599
+Household & Personal Products,Restaurants,0.16166894305038357
+Credit Services,Restaurants,0.009328832677098322
+Home Improvement Retail,Restaurants,-0.050679189401273694
+Discount Stores,Restaurants,0.3246535870899866
+Software - Application,Restaurants,0.3275167656732406
+Medical Instruments & Supplies,Restaurants,0.1052278660596785
+Oil & Gas E&P,Restaurants,0.4819324896506252
+Specialty Retail,Restaurants,0.4687479337687573
+Specialty Industrial Machinery,Restaurants,0.3256467938170834
+Restaurants,Restaurants,1.0
+Gambling,Restaurants,0.3934043594223452
+Aerospace & Defense,Restaurants,0.28426367112638234
+Solar,Restaurants,-0.05367829587542892
+Building Products & Equipment,Restaurants,0.28540232367183266
+Biotechnology,Restaurants,0.11363821802124034
+Semiconductor Equipment & Materials,Restaurants,0.39677215312051317
+Residential Construction,Restaurants,-0.20682078179759567
+Utilities - Regulated Electric,Restaurants,0.09902038101264442
+Consumer Electronics,Gambling,0.3343038889210151
+Software - Infrastructure,Gambling,0.5219415623091272
+Banks - Diversified,Gambling,0.5911464500496351
+Semiconductors,Gambling,0.2760685516290666
+Oil & Gas Integrated,Gambling,0.45042259799550294
+Drug Manufacturers - General,Gambling,0.5446929028678134
+Healthcare Plans,Gambling,0.89086264438756
+Household & Personal Products,Gambling,0.32411860624147504
+Credit Services,Gambling,0.27636479153044063
+Home Improvement Retail,Gambling,0.035838601728632416
+Discount Stores,Gambling,0.42146055211774297
+Software - Application,Gambling,0.47478160675335646
+Medical Instruments & Supplies,Gambling,0.17998752563913684
+Oil & Gas E&P,Gambling,0.46807007461185485
+Specialty Retail,Gambling,0.46757337163293505
+Specialty Industrial Machinery,Gambling,0.3685427220734583
+Restaurants,Gambling,0.3934043594223452
+Gambling,Gambling,1.0
+Aerospace & Defense,Gambling,0.4120108936722442
+Solar,Gambling,0.28496756969185
+Building Products & Equipment,Gambling,0.28087179750846963
+Biotechnology,Gambling,0.15102151438529782
+Semiconductor Equipment & Materials,Gambling,0.38354443975721514
+Residential Construction,Gambling,0.24817592811820716
+Utilities - Regulated Electric,Gambling,0.17858647261434085
+Consumer Electronics,Aerospace & Defense,0.38024254779886724
+Software - Infrastructure,Aerospace & Defense,0.5293072096821575
+Banks - Diversified,Aerospace & Defense,0.40020119120238923
+Semiconductors,Aerospace & Defense,0.5336424061881697
+Oil & Gas Integrated,Aerospace & Defense,0.3687034230540666
+Drug Manufacturers - General,Aerospace & Defense,0.22901521420790955
+Healthcare Plans,Aerospace & Defense,0.28847370460533645
+Household & Personal Products,Aerospace & Defense,0.04930818178991886
+Credit Services,Aerospace & Defense,0.4384559155160072
+Home Improvement Retail,Aerospace & Defense,0.24254439571894978
+Discount Stores,Aerospace & Defense,0.8060584596020968
+Software - Application,Aerospace & Defense,0.2150189546503945
+Medical Instruments & Supplies,Aerospace & Defense,0.3396075475917597
+Oil & Gas E&P,Aerospace & Defense,0.3913125851021477
+Specialty Retail,Aerospace & Defense,0.43492791747116566
+Specialty Industrial Machinery,Aerospace & Defense,0.3845040352287662
+Restaurants,Aerospace & Defense,0.28426367112638234
+Gambling,Aerospace & Defense,0.4120108936722442
+Aerospace & Defense,Aerospace & Defense,1.0
+Solar,Aerospace & Defense,0.4053383956676763
+Building Products & Equipment,Aerospace & Defense,-0.080949921442724
+Biotechnology,Aerospace & Defense,-0.10665719233667603
+Semiconductor Equipment & Materials,Aerospace & Defense,0.21720392295645857
+Residential Construction,Aerospace & Defense,0.38926313887791114
+Utilities - Regulated Electric,Aerospace & Defense,0.3279548224308325
+Consumer Electronics,Solar,0.41544856029294003
+Software - Infrastructure,Solar,0.3144361041911973
+Banks - Diversified,Solar,0.18631401869011124
+Semiconductors,Solar,0.4047138264335522
+Oil & Gas Integrated,Solar,0.16581533260901468
+Drug Manufacturers - General,Solar,0.11688500579364623
+Healthcare Plans,Solar,0.2738155799301424
+Household & Personal Products,Solar,-0.21861029008094043
+Credit Services,Solar,0.7009275447249746
+Home Improvement Retail,Solar,0.46721361603412387
+Discount Stores,Solar,0.43734349982562876
+Software - Application,Solar,-0.0008799143963327515
+Medical Instruments & Supplies,Solar,0.5604117232951171
+Oil & Gas E&P,Solar,0.44930808981137327
+Specialty Retail,Solar,0.4643542222650958
+Specialty Industrial Machinery,Solar,0.27582333715404
+Restaurants,Solar,-0.05367829587542892
+Gambling,Solar,0.28496756969185
+Aerospace & Defense,Solar,0.4053383956676763
+Solar,Solar,1.0
+Building Products & Equipment,Solar,-0.05653891770088854
+Biotechnology,Solar,-0.1375329517084124
+Semiconductor Equipment & Materials,Solar,0.24299568838613603
+Residential Construction,Solar,0.8867147908513995
+Utilities - Regulated Electric,Solar,0.5458738192055426
+Consumer Electronics,Building Products & Equipment,0.0761928400227183
+Software - Infrastructure,Building Products & Equipment,0.32954583211856614
+Banks - Diversified,Building Products & Equipment,0.37485958238368905
+Semiconductors,Building Products & Equipment,0.007467274108832115
+Oil & Gas Integrated,Building Products & Equipment,0.49585770499663206
+Drug Manufacturers - General,Building Products & Equipment,0.49057350042397285
+Healthcare Plans,Building Products & Equipment,0.2838556213030623
+Household & Personal Products,Building Products & Equipment,0.4477905383875892
+Credit Services,Building Products & Equipment,0.01477492110955751
+Home Improvement Retail,Building Products & Equipment,-0.09299331248676362
+Discount Stores,Building Products & Equipment,0.12110652194292373
+Software - Application,Building Products & Equipment,0.4442731082923707
+Medical Instruments & Supplies,Building Products & Equipment,0.1562068150302774
+Oil & Gas E&P,Building Products & Equipment,0.2584572835007559
+Specialty Retail,Building Products & Equipment,0.23911549156170908
+Specialty Industrial Machinery,Building Products & Equipment,0.13317304170949515
+Restaurants,Building Products & Equipment,0.28540232367183266
+Gambling,Building Products & Equipment,0.28087179750846963
+Aerospace & Defense,Building Products & Equipment,-0.080949921442724
+Solar,Building Products & Equipment,-0.05653891770088854
+Building Products & Equipment,Building Products & Equipment,1.0
+Biotechnology,Building Products & Equipment,0.67128523553836
+Semiconductor Equipment & Materials,Building Products & Equipment,0.5220833591186924
+Residential Construction,Building Products & Equipment,-0.1984649055758089
+Utilities - Regulated Electric,Building Products & Equipment,0.15399045243647663
+Consumer Electronics,Biotechnology,-0.14337260363808918
+Software - Infrastructure,Biotechnology,0.12912201294738684
+Banks - Diversified,Biotechnology,0.19644700622810332
+Semiconductors,Biotechnology,-0.03395256543331337
+Oil & Gas Integrated,Biotechnology,0.34639983779537964
+Drug Manufacturers - General,Biotechnology,0.25014059675674666
+Healthcare Plans,Biotechnology,0.14557755731494576
+Household & Personal Products,Biotechnology,0.477360470649208
+Credit Services,Biotechnology,-0.1903545197636442
+Home Improvement Retail,Biotechnology,-0.22516107355622467
+Discount Stores,Biotechnology,-0.001211642076725753
+Software - Application,Biotechnology,0.3912027361053676
+Medical Instruments & Supplies,Biotechnology,-0.11740321511580024
+Oil & Gas E&P,Biotechnology,-0.020959030313254825
+Specialty Retail,Biotechnology,-0.03335152981546918
+Specialty Industrial Machinery,Biotechnology,0.058480994133021505
+Restaurants,Biotechnology,0.11363821802124034
+Gambling,Biotechnology,0.15102151438529782
+Aerospace & Defense,Biotechnology,-0.10665719233667603
+Solar,Biotechnology,-0.1375329517084124
+Building Products & Equipment,Biotechnology,0.67128523553836
+Biotechnology,Biotechnology,1.0
+Semiconductor Equipment & Materials,Biotechnology,0.17836384002764855
+Residential Construction,Biotechnology,-0.1987193760413376
+Utilities - Regulated Electric,Biotechnology,-0.11456899644148673
+Consumer Electronics,Semiconductor Equipment & Materials,0.5133778610638741
+Software - Infrastructure,Semiconductor Equipment & Materials,0.7166442557160391
+Banks - Diversified,Semiconductor Equipment & Materials,0.4974443245723523
+Semiconductors,Semiconductor Equipment & Materials,0.29855227249698985
+Oil & Gas Integrated,Semiconductor Equipment & Materials,0.45130866102040107
+Drug Manufacturers - General,Semiconductor Equipment & Materials,0.5806773540369973
+Healthcare Plans,Semiconductor Equipment & Materials,0.3863670949785462
+Household & Personal Products,Semiconductor Equipment & Materials,0.3504771390053873
+Credit Services,Semiconductor Equipment & Materials,0.5008188697127419
+Home Improvement Retail,Semiconductor Equipment & Materials,0.12597001505023275
+Discount Stores,Semiconductor Equipment & Materials,0.39962430083831435
+Software - Application,Semiconductor Equipment & Materials,0.48913186026641103
+Medical Instruments & Supplies,Semiconductor Equipment & Materials,0.6269800910402891
+Oil & Gas E&P,Semiconductor Equipment & Materials,0.6844803925471185
+Specialty Retail,Semiconductor Equipment & Materials,0.6824971102715485
+Specialty Industrial Machinery,Semiconductor Equipment & Materials,0.3081229905830535
+Restaurants,Semiconductor Equipment & Materials,0.39677215312051317
+Gambling,Semiconductor Equipment & Materials,0.38354443975721514
+Aerospace & Defense,Semiconductor Equipment & Materials,0.21720392295645857
+Solar,Semiconductor Equipment & Materials,0.24299568838613603
+Building Products & Equipment,Semiconductor Equipment & Materials,0.5220833591186924
+Biotechnology,Semiconductor Equipment & Materials,0.17836384002764855
+Semiconductor Equipment & Materials,Semiconductor Equipment & Materials,1.0
+Residential Construction,Semiconductor Equipment & Materials,0.12935070283925623
+Utilities - Regulated Electric,Semiconductor Equipment & Materials,0.6319822895038446
+Consumer Electronics,Residential Construction,0.3399731757821791
+Software - Infrastructure,Residential Construction,0.20799360085923033
+Banks - Diversified,Residential Construction,0.0960645179511922
+Semiconductors,Residential Construction,0.3803508652489956
+Oil & Gas Integrated,Residential Construction,0.07293914308186403
+Drug Manufacturers - General,Residential Construction,0.021921291038626785
+Healthcare Plans,Residential Construction,0.20617560915642236
+Household & Personal Products,Residential Construction,-0.2521367782519988
+Credit Services,Residential Construction,0.6157813108820981
+Home Improvement Retail,Residential Construction,0.4202892690901303
+Discount Stores,Residential Construction,0.37712579798080137
+Software - Application,Residential Construction,-0.06138240653237124
+Medical Instruments & Supplies,Residential Construction,0.4976678434126547
+Oil & Gas E&P,Residential Construction,0.33551581217279186
+Specialty Retail,Residential Construction,0.35582500445412907
+Specialty Industrial Machinery,Residential Construction,0.22277275166201724
+Restaurants,Residential Construction,-0.20682078179759567
+Gambling,Residential Construction,0.24817592811820716
+Aerospace & Defense,Residential Construction,0.38926313887791114
+Solar,Residential Construction,0.8867147908513995
+Building Products & Equipment,Residential Construction,-0.1984649055758089
+Biotechnology,Residential Construction,-0.1987193760413376
+Semiconductor Equipment & Materials,Residential Construction,0.12935070283925623
+Residential Construction,Residential Construction,1.0
+Utilities - Regulated Electric,Residential Construction,0.48598427895722907
+Consumer Electronics,Utilities - Regulated Electric,0.4624661997065475
+Software - Infrastructure,Utilities - Regulated Electric,0.46616047104171127
+Banks - Diversified,Utilities - Regulated Electric,0.18199465544520108
+Semiconductors,Utilities - Regulated Electric,0.38533141873347904
+Oil & Gas Integrated,Utilities - Regulated Electric,0.10707071341726582
+Drug Manufacturers - General,Utilities - Regulated Electric,0.13476486844881308
+Healthcare Plans,Utilities - Regulated Electric,0.2689297946551696
+Household & Personal Products,Utilities - Regulated Electric,0.0442733245452546
+Credit Services,Utilities - Regulated Electric,0.7188590282873569
+Home Improvement Retail,Utilities - Regulated Electric,0.4400698947564336
+Discount Stores,Utilities - Regulated Electric,0.48620224884682606
+Software - Application,Utilities - Regulated Electric,0.18971896290687312
+Medical Instruments & Supplies,Utilities - Regulated Electric,0.9969991214134883
+Oil & Gas E&P,Utilities - Regulated Electric,0.5522426536555054
+Specialty Retail,Utilities - Regulated Electric,0.5731466974856348
+Specialty Industrial Machinery,Utilities - Regulated Electric,0.12321684743099182
+Restaurants,Utilities - Regulated Electric,0.09902038101264442
+Gambling,Utilities - Regulated Electric,0.17858647261434085
+Aerospace & Defense,Utilities - Regulated Electric,0.3279548224308325
+Solar,Utilities - Regulated Electric,0.5458738192055426
+Building Products & Equipment,Utilities - Regulated Electric,0.15399045243647663
+Biotechnology,Utilities - Regulated Electric,-0.11456899644148673
+Semiconductor Equipment & Materials,Utilities - Regulated Electric,0.6319822895038446
+Residential Construction,Utilities - Regulated Electric,0.48598427895722907
+Utilities - Regulated Electric,Utilities - Regulated Electric,1.0
