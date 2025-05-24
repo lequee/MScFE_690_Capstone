@@ -7,7 +7,6 @@ pip install -r requirements.txt
 ```
 
 # How to run
-```shell
-cd modelling_code
-python Mean_Reversion_Individual_Stock_Pipeline.py
-```
+run two notebook files
++ Mean_Reversion_Individual_Stock_Notebook
++ Mean_Reversion_Pair_Trading_Notebook
