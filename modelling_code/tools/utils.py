@@ -65,8 +65,11 @@ def adf_test(series):
     result = adfuller(series)
     return result[1]  # p-value
 
-def calculate_hurst_exponent(series):
-    H, _, _ = compute_Hc(series, kind="price", simplified=True)
+def calculate_hurst_exponent(series, strategy_type):
+    if strategy_type == "price":
+        H, _, _ = compute_Hc(series, kind="price", simplified=True)
+    if strategy_type == "spread":
+        H, _, _ = compute_Hc(series, kind="change", simplified=True)
     return H
 
 def fit_ornstein_uhlenbeck(series):
@@ -75,6 +78,37 @@ def fit_ornstein_uhlenbeck(series):
     beta = np.polyfit(price_lag, price_diff, 1)[0]
     half_life = -np.log(2) / beta if beta != 0 else np.nan
     return {"half_life": half_life}
+
+
+## Run analysis
+def run_mean_reversion_analysis(prices, metadata_df=None, strategy_type = "price"):
+    results = []
+
+    for ticker in prices.columns:
+        series = prices[ticker].dropna()
+        try:
+            adf_pval = adf_test(series)
+            hurst = calculate_hurst_exponent(series, strategy_type = strategy_type)
+            ou_params = fit_ornstein_uhlenbeck(series)
+            volatility = series.diff().std()
+
+            results.append({
+                "Ticker": ticker,
+                "ADF p-value": round(adf_pval, 4),
+                "Hurst": round(hurst, 4),
+                "Half-life": round(ou_params["half_life"], 4),
+                "Volatility": round(volatility, 4)
+            })
+
+        except Exception as e:
+            print(f"Error processing {ticker}: {e}")
+
+    df_result = pd.DataFrame(results)
+
+    if metadata_df is not None:
+        df_result = df_result.merge(metadata_df, on="Ticker", how="left")
+
+    return df_result
 
 
 # Result analysis
@@ -97,34 +131,5 @@ def read_csv_by_pattern(pattern="mean_reversion_individual_full_report_*.csv"):
     else:
         print("No matching CSV files found.")
         return pd.DataFrame()
-
-
-## Run analysis
-def run_mean_reversion_analysis(prices, metadata_df=None):
-    results = []
-
-    for ticker in prices.columns:
-        series = prices[ticker].dropna()
-        try:
-            adf_pval = adf_test(series)
-            hurst = calculate_hurst_exponent(series)
-            ou_params = fit_ornstein_uhlenbeck(series)
-            volatility = series.diff().std()
-
-            results.append({
-                "Ticker": ticker,
-                "ADF p-value": round(adf_pval, 4),
-                "Hurst": round(hurst, 4),
-                "Half-life": round(ou_params["half_life"], 4),
-                "Volatility": round(volatility, 4)
-            })
-
-        except Exception as e:
-            print(f"Error processing {ticker}: {e}")
-
-    df_result = pd.DataFrame(results)
-
-    if metadata_df is not None:
-        df_result = df_result.merge(metadata_df, on="Ticker", how="left")
-
-    return df_result
+    
+#%%
