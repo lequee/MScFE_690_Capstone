@@ -16,33 +16,43 @@ LLY,Healthcare,Drug Manufacturers - General,Large
 BAC,Financial Services,Banks - Diversified,Large
 MRK,Healthcare,Drug Manufacturers - General,Large
 ADBE,Technology,Software - Application,Large
+GOOGL,Communication Services,Internet Content & Information,Large
+AMZN,Consumer Cyclical,Internet Retail,Large
+CVX,Energy,Oil & Gas Integrated,Large
+PFE,Healthcare,Drug Manufacturers - General,Large
 TFX,Healthcare,Medical Instruments & Supplies,Mid
 HES,Energy,Oil & Gas E&P,Mid
-NTNX,Technology,Software - Infrastructure,Mid
 WU,Financial Services,Credit Services,Mid
-FIVE,Consumer Cyclical,Specialty Retail,Mid
-GNRC,Industrials,Specialty Industrial Machinery,Mid
-WING,Consumer Cyclical,Restaurants,Mid
 CHDN,Consumer Cyclical,Gambling,Mid
-FND,Consumer Cyclical,Home Improvement Retail,Mid
-HWM,Industrials,Aerospace & Defense,Mid
 CROX,Consumer Cyclical,Footwear & Accessories,Mid
-ENPH,Technology,Solar,Mid
 FICO,Technology,Software - Application,Mid
 ROK,Industrials,Specialty Industrial Machinery,Mid
 LII,Industrials,Building Products & Equipment,Mid
+WDC,Technology,Computer Hardware,Mid
+MTCH,Communication Services,Internet Content & Information,Mid
+MKC,Consumer Defensive,Packaged Foods,Mid
+CLF,Basic Materials,Steel,Mid
+FE,Utilities,Utilities - Regulated Electric,Mid
+REG,Real Estate,REIT - Retail,Mid
+AKAM,Technology,Software - Infrastructure,Mid
+ILMN,Healthcare,Diagnostics & Research,Mid
+TXT,Industrials,Aerospace & Defense,Mid
+EXR,Real Estate,REIT - Industrial,Mid
 INSM,Healthcare,Biotechnology,Small
 NEOG,Healthcare,Diagnostics & Research,Small
 ACLS,Technology,Semiconductor Equipment & Materials,Small
 PRDO,Consumer Defensive,Education & Training Services,Small
-ORGO,Healthcare,Drug Manufacturers - Specialty & Generic,Small
 IMMR,Technology,Software - Application,Small
 CVCO,Consumer Cyclical,Residential Construction,Small
-GPRO,Technology,Consumer Electronics,Small
 STRL,Industrials,Engineering & Construction,Small
 TPC,Industrials,Engineering & Construction,Small
 GHC,Consumer Defensive,Education & Training Services,Small
 FIZZ,Consumer Defensive,Beverages - Non-Alcoholic,Small
-EVTC,Technology,Software - Infrastructure,Small
 CMTL,Technology,Communication Equipment,Small
 MGEE,Utilities,Utilities - Regulated Electric,Small
+CRVL,Financial Services,Insurance Brokers,Small
+CVGW,Consumer Defensive,Food Distribution,Small
+CLW,Basic Materials,Paper & Paper Products,Small
+AMSC,Industrials,Specialty Industrial Machinery,Small
+BBY,Consumer Cyclical,Specialty Retail,Small
+PRTS,Consumer Cyclical,Auto Parts,Small
